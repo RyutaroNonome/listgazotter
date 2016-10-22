@@ -24,7 +24,8 @@ class AuthSessionsController < ApplicationController
   def signout
     session[:auth_user_id] = nil
     # redirect_to '/', :notice => "認証を外しました。"
-    render :text => "認証を外しました。" # とりあえず
+    # render :text => "認証を外しました。" # とりあえず
+    redirect_to root_url, :notice => "認証を外しました。"
   end
 
 end

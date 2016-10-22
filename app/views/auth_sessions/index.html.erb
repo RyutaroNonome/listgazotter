@@ -16,8 +16,13 @@ secret: <%= au.secret %>
 user_info: <%= au.user_info %>
 </pre>
 
+
+<br><%= link_to 'ログアウト', '/auth/twitter/signout' %>
+
+
 <% else %>
 
-認証ログインしてないぞい！。
+認証ログインしてないぞい！
+<%= link_to 'ログイン', '/auth/twitter' %>
 
 <% end %>

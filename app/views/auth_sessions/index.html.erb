@@ -1,0 +1,23 @@
+<% au = AuthUser.find_by_id(session[:auth_user_id]) %>
+<% if au %>
+
+<pre>
+id: <%= au.id %>
+provider: <%= au.provider %>
+uid: <%= au.uid %>
+name: <%= au.name %>
+screen_name: <%= au.screen_name %>
+nickname: <%= au.nickname %>
+img_url:  <%= au.img_url %>
+<img src="<%= au.img_url %>" />
+credentials: <%= au.credentials %>
+token: <%= au.token %>
+secret: <%= au.secret %>
+user_info: <%= au.user_info %>
+</pre>
+
+<% else %>
+
+認証ログインしていません。
+
+<% end %>

@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     get '/auth/:provider/'           => 'auth_sessions#auth'
     get '/auth/:provider/callback'   => 'auth_sessions#create'
     # get '/auth/signout'              => 'auth_sessions#signout'
-    get '/auth/:provider/signout'              => 'auth_sessions#signout'
+    get '/auth/:provider/signout'    => 'auth_sessions#signout'
 end

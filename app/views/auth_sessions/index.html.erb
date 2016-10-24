@@ -22,40 +22,11 @@ user_info: <%= au.user_info %>
 
 
 
-<!-- 特定ユーザーのツイート取ってくるンゴ -->
+<!-- 特定ユーザーのツイート取ってくるンゴ clientにログインしたユーザーの情報が入ってる。→ApplicatonController.rb twitter_clientで明記 -->
 <br>
 
-<%=
-require 'twitter'
-
-@client = Twitter::REST::Client.new do |config|
-  config.consumer_key    = 'yZtf6PURnd0G9e67WbE9z3ZMb'
-  config.consumer_secret = '1A1a8R2dW3x8ZObccqzi7eDwlUtbpQuYxX2rkwDQxYDVdadPmf'
-  config.access_token    = au.token
-  config.access_token_secret = au.secret
-end
-
-# # 特定ユーザのtimeline取得
-# @client.user_timeline(au).each do |timeline|
-#   puts @client.status(timeline.id).text
-# end
-
-# # 特定ユーザのtimelineを件数(2件)指定して取得
-# @client.user_timeline(au, { count: 2 } ).each do |timeline|
-#   puts @client.status(timeline.id).text
-# end
-
-max_id = @client.home_timeline.first.id
-2.times do
-    @client.home_timeline(max_id: max_id,count: 10).each do |tweet|
-        puts tweet.user.name
-        puts tweet.full_text
-        puts "Fav: #{tweet.favorite_count}, Retweet: #{tweet.retweet_count}"
-        max_id = tweet.id unless tweet.retweeted?
-    end
-    sleep 60
-end
-%>
+<%= @client.home_timeline.first.id %>
+<%= @client.home_timeline({count: 5})%>
 
 
 <% else %>

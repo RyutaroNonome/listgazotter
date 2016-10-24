@@ -1,6 +1,10 @@
 class AuthSessionsController < ApplicationController
 
   # redirect to provider's authorizing page.
+  def index
+    @client = twitter_client
+  end
+
   def auth
     consumer_key = 'yZtf6PURnd0G9e67WbE9z3ZMb'
     url = case params[:provider]

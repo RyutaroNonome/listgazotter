@@ -22,11 +22,14 @@ user_info: <%= au.user_info %>
 
 
 
-<!-- 特定ユーザーのツイート取ってくるンゴ clientにログインしたユーザーの情報が入ってる。→ApplicatonController.rb twitter_clientで明記 -->
+<!-- 特定ユーザーのツイート取ってくるンゴ clintにログインしたユーザーの情報が入ってる。→ApplicatonController.rb twitter_clientで明記 -->
 <br>
 
 <%= @client.home_timeline.first.id %>
-<%= @client.home_timeline({count: 5})%>
+<br>
+<% @client.home_timeline({count: 5}).each do |tweet| %>
+<%= tweet.full_text %>
+<% end %>
 
 
 <% else %>

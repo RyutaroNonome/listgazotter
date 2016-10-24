@@ -29,7 +29,14 @@ user_info: <%= au.user_info %>
 <br>
 <% @client.home_timeline({count: 5}).each do |tweet| %>
 <%= tweet.full_text %>
+<% end %>
 <br>
+
+<% @client.lists.each do |list| %>
+<%= list.name %>
+<br>
+
+
 <% end %>
 
 

@@ -24,19 +24,30 @@ user_info: <%= au.user_info %>
 
 <!-- 特定ユーザーのツイート取ってくるンゴ clintにログインしたユーザーの情報が入ってる。→ApplicatonController.rb twitter_clientで明記 -->
 <br>
-
+============== タイムラインのfirst_id ==================================<br>
 <%= @client.home_timeline.first.id %>
 <br>
+<br>
+============== home_timeline_5個 ==================================<br>
 <% @client.home_timeline({count: 5}).each do |tweet| %>
-<%= tweet.full_text %>
+・<%= tweet.full_text %>
+<br>
 <% end %>
 <br>
+<br>
 
+============== リスト全表示 ==================================<br>
 <% @client.lists.each do |list| %>
 <%= list.name %>
 <br>
+<% end %>
+<br>
+<br>
 
-
+============== ログイン中ユーザーの☻という名前のリスト内のツイート、デフォルト件数だけ表示 ==================================<br>
+<% @client.list_timeline("☻").each do |tl| %>
+・<%= tl.text %>
+<br>
 <% end %>
 
 

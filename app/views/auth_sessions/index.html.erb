@@ -31,14 +31,15 @@ user_info: <%= au.user_info %>
 ============== home_timeline_5個 ==================================<br>
 <% @client.home_timeline({count: 5}).each do |tweet| %>
 ・<%= tweet.full_text %>
-<br>
 <% end %>
+<br>
 <br>
 <br>
 
 ============== リスト全表示 ==================================<br>
 <% @client.lists.each do |list| %>
-<%= list.name %>
+<p class="list-name"><%= list.name %></p>
+
 <br>
 <% end %>
 <br>
@@ -57,3 +58,13 @@ user_info: <%= au.user_info %>
 <%= link_to 'ログイン', '/auth/twitter' %>
 
 <% end %>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+$(function() {
+  $('.list-name').click(function(){
+    var hoge = $(this).text();
+    console.log(hoge);
+  });
+});
+</script>

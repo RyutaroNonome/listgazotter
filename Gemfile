@@ -48,3 +48,4 @@ end
 gem 'twitter'
 gem 'omniauth-twitter'
 gem 'rename'
+gem 'config'

@@ -31,6 +31,7 @@ user_info: <%= au.user_info %>
 ============== home_timeline_5個 ==================================<br>
 <% @client.home_timeline({count: 5}).each do |tweet| %>
 ・<%= tweet.full_text %>
+<br>
 <% end %>
 <br>
 <br>

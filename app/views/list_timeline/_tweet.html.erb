@@ -1,0 +1,7 @@
+<% client.list_timeline(@tl,:include_entities => true).each do |tl| %>
+・<%= tl.text %><br>
+  <% tl.media.each do |media| %>
+    <%= image_tag(media.media_url,:size => "128x128") %>
+  <% end %>
+<br>
+<% end %>

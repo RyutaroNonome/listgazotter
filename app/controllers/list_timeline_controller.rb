@@ -1,6 +1,8 @@
 class ListTimelineController < ApplicationController
   def listtimeline
-    @tl = params[:name]
+    #@clientを使えるようにする。
     @client = twitter_client
+    #クリックされたされたリストの名前を文字データにして@tlに入れる。
+    @tl = params[:name]
   end
 end

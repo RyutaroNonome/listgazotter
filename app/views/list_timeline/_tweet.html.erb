@@ -1,7 +1,26 @@
-<% client.list_timeline(@tl,:include_entities => true).each do |tl| %>
-・<%= tl.text %><br>
-  <% tl.media.each do |media| %>
-    <%= image_tag(media.media_url,:size => "128x128") %>
+<!-- <br>============== ログイン中ユーザーの《<%= @tl %>》という名前のリスト内のツイート、デフォルト件数だけ表示 ==================================<br><br>
+
+ -->
+
+<header>
+  <h1>《<%= @tl %>》のタイムライン</h1>
+</header>
+<div class="contents">
+  <% @client.list_timeline(@tl,:include_entities => true).each do |tl| %>
+    <div class="message clearfix">
+      <%= image_tag(tl.user.profile_image_url) %>
+      <div class="message_box">
+        <p class="user_name">
+          <%= tl.user.name %> @<%= tl.user.screen_name %><br>
+        </p>
+        <p class="text">
+          <%= tl.text %>
+          <p class="media">
+            <% tl.media.each do |media| %>
+              <%= image_tag(media.media_url) %>
+            <% end %>
+          </p>
+      </div>
+    </div>
   <% end %>
-<br>
-<% end %>
+</div>

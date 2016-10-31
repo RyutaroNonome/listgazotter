@@ -38,18 +38,23 @@ user_info: <%= au.user_info %>
 
 ============== リスト全表示 ==================================<br>
 <% @client.lists.each do |list| %>
-<p class="list-name"><%= list.name %></p>
-
+<%= link_to list.name, listtimeline_path(name: list.name) %>
 <br>
 <% end %>
 <br>
 <br>
 
 ============== ログイン中ユーザーの☻という名前のリスト内のツイート、デフォルト件数だけ表示 ==================================<br>
-<% @client.list_timeline("☻").each do |tl| %>
-・<%= tl.text %>
+<% @client.list_timeline("☻",:include_entities => true).each do |tl| %>
+・<%= tl.text %><br>
+  <% tl.media.each do |media| %>
+    <img src="<%= media.media_url %>" />
+  <% end %>
 <br>
 <% end %>
+
+
+
 
 
 <% else %>

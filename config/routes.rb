@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     get '/auth/:provider/callback'   => 'auth_sessions#create'
     # get '/auth/signout'              => 'auth_sessions#signout'
     get '/auth/:provider/signout'    => 'auth_sessions#signout'
+    get 'list_link', to: 'list_timeline#listtimeline', as: 'listtimeline'
 end

@@ -4,6 +4,5 @@ class ListTimelineController < ApplicationController
     @client = twitter_client
     #クリックされたされたリストの名前を文字データにして@tlに入れる。
     @tl = params[:name]
-    @line = "================================================================"
   end
 end

@@ -3,8 +3,11 @@
  -->
 
 <header>
-  <h1>《<%= @tl %>》のタイムライン</h1>
+  <h1>ついったー</h1>
 </header>
+<footer>
+  <h1>《<%= @tl %>》のタイムライン</h1>
+</footer>
 <div class="contents">
   <% @client.list_timeline(@tl,:include_entities => true).each do |tl| %>
     <div class="message clearfix">
@@ -15,6 +18,7 @@
         </p>
         <p class="text">
           <%= tl.text %>
+        </p>
           <p class="media">
             <% tl.media.each do |media| %>
               <%= image_tag(media.media_url) %>

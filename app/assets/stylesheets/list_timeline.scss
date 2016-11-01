@@ -27,6 +27,11 @@ header{
   /*border-bottom: 2px solid #bbb;*/
 }
 
+footer{
+  height: 46px;
+}
+
+
 h1{
   height: 46px;
   line-height: 46px;
@@ -48,44 +53,6 @@ h2{
   background-color: white;
 }
 
-form{
-  width: 600px;
-  background-color: white;
-  padding: 5px 0 0;
-}
-
-.input-box{
-  float: left;
-  width: 500px;
-}
-
-.input-box input{
-  width: 100%;
-  margin: 0 0 10px 0;
-}
-
-form img{
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  float: left;
-  height: 24px;
-  margin: 0 5px 5px 34px;
-}
-
-.submit-button{
-  width: 70px;
-  margin: 10px 25px 0 0;
-}
-
-form textarea{
-  width: 500px;
-  border: 1px solid #ccc;
-}
-
-.button-box{
-  float: right;
-  height: 70px;
-}
 
 .message{
   min-height: 100px;
@@ -100,13 +67,13 @@ form textarea{
   border: 1px solid #ccc;
   border-radius: 5px;
   float: left;
-  height: 48px;
-  margin: 10px;
+  max-width: 500px;
+  margin: 3px;
 }
 
 .message_box{
   float: left;
-  height: 100px;
+  min-height: 100px;
   width: 505px;
   padding: 9px 0 10px;
 }
@@ -116,10 +83,6 @@ form textarea{
   line-height: 18px;
 }
 
-.time{
-  color: #bbb;
-}
-
 .text{
-  line-height: 18px;
+  line-height: 20px;
 }

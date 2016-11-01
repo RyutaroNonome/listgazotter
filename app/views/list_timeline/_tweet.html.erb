@@ -9,7 +9,7 @@
   <h1>《<%= @tl %>》のタイムライン</h1>
 </footer>
 <div class="contents">
-  <% @client.list_timeline(@tl,:include_entities => true).each do |tl| %>
+  <% @tweets_with_image.each do |tl| %>
     <div class="message clearfix">
       <%= image_tag(tl.user.profile_image_url) %>
       <div class="message_box">

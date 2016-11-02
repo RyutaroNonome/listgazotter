@@ -9,32 +9,37 @@ h1,h2,h3,h4,h5,h6,p {
   margin: 0;
 }
 
-header {
-  background-color: gray;
-  height: 150px;
+h1{
+  height: 46px;
+  line-height: 46px;
+  font-size: 18px;
+  text-align: center;
 }
 
-.contents {
-  height: 400px;
-  width: 960px;
-  background-color: #C0C0C0;
+h2{
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+  float: right;
 }
 
-footer {
-  background-color: gray;
-  height:50px;
+.logout_button{
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+  float: right;
 }
 
-
-
-
-
+/*以下はメニューバー*/
 .dropmenu{
   *zoom: 1;
   list-style-type: none;
   width: 960px;
-  margin: 5px auto 30px;
+  margin: auto;
   padding: 0;
+  float: right;
 }
 .dropmenu:before, .dropmenu:after{
   content: "";
@@ -46,7 +51,7 @@ footer {
 .dropmenu li{
   position: relative;
   width: 20%;
-  float: left;
+  float: right;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -102,3 +107,4 @@ footer {
 #normal li:hover ul{
   display: block;
 }
+

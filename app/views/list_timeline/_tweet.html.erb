@@ -3,11 +3,21 @@
  -->
 
 <header>
-  <h1>ついったー</h1>
-</header>
-<footer>
   <h1>《<%= @tl %>》のタイムライン</h1>
-</footer>
+    <ul id="normal" class="dropmenu">
+      <li><a href="#">リスト</a>
+        <ul>
+          <% @client.lists.each do |list| %>
+            <li><%= link_to list.name, listtimeline_path(name: list.name) %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+</header>
+<!-- <footer>
+  <h1>《<%= @tl %>》のタイムライン</h1>
+</footer> -->
 <div class="contents">
   <% @tweets_with_image.each do |tl| %>
     <div class="message clearfix">

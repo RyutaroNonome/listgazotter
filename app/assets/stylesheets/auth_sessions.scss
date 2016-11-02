@@ -1,3 +1,34 @@
+body {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+header {
+  background-color: gray;
+  height: 150px;
+}
+
+.contents {
+  height: 400px;
+  width: 960px;
+  background-color: #C0C0C0;
+}
+
+footer {
+  background-color: gray;
+  height:50px;
+}
+
+
+
+
+
 .dropmenu{
   *zoom: 1;
   list-style-type: none;

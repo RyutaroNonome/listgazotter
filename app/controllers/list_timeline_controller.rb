@@ -5,7 +5,7 @@ class ListTimelineController < ApplicationController
     #クリックされたされたリスト名を文字データにして@tlに入れる。
     @tl = params[:name]
     #画像付きツイートだけ格納
-     @tweets = @client.list_timeline(@tl,count: 200)
+    @tweets = @client.list_timeline(@tl,count: 200)
      # :include_entities => trueを付けなくても動く。
      # @tweets = @client.list_timeline(@tl,count: 200,:include_entities => true)
 

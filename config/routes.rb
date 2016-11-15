@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     # get '/auth/signout'              => 'auth_sessions#signout'
     get '/auth/:provider/signout'    => 'auth_sessions#signout'
     get 'list_link', to: 'list_timeline#listtimeline', as: 'listtimeline'
+    get 'error_page', to: 'list_timeline#error_page', as: 'error_page'
 end

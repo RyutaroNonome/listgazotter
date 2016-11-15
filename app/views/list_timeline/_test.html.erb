@@ -1,6 +1,3 @@
-<% au = AuthUser.find_by_id(session[:auth_user_id]) %>
-<% if au %>
-
 <body>
   <header>
     <h6>ついったー</h6>
@@ -10,13 +7,11 @@
 
   <div id="main">
    <div id="menu">
-    <%= link_to 'マイページ', mypage_path %>
-    <%= link_to 'ログアウト', '/auth/twitter/signout' %>
+    <%= link_to 'ログイン', '/auth/twitter' %>
    </div>
 
 <h3>絵師さんのイラスト更新確認をかんたんに</h3>
-<p>　あなたの"リスト"タイムラインの画像付きツイートのみを抽出して表示するので、お気に入り絵師さんのイラスト・漫画の更新をかんたんに確認できます。</p>
-
+  <p>　あなたの"リスト"タイムラインの画像付きツイートのみを抽出して表示するので、お気に入り絵師さんのイラスト・漫画の更新をかんたんに確認できます。</p>
 <h3>利用方法</h3>
 　twitterと一緒に使います。
   <ul>
@@ -25,27 +20,14 @@
     <li>②各リストにお気に入り絵師さんを登録する。</li>
     <li>③ついったーで各リストのイラスト更新をチェック♪</li>
   </ul>
-
-  <h4>ご利用規約</h4>
-
+<h4>ご利用規約</h4>
   <ul>
     <li>利用は無料ですが、<a href="http://www.netmania.jp/abouts.php">に関してはこちら</a>をご覧下さい。</li>
   </ul>
 
   </div><!-- main -->
-
-
-
-
   </div>
 
   <footer>
   </footer>
 </body>
-
-
-<% else %>
-
-<%= render partial: "list_timeline/test" %>
-
-<% end %>

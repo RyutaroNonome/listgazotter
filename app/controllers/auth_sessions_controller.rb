@@ -6,7 +6,7 @@ class AuthSessionsController < ApplicationController
   end
 
   def auth
-    consumer_key = 'yZtf6PURnd0G9e67WbE9z3ZMb'
+    consumer_key = Settings.twitter[:consumer_key]
     url = case params[:provider]
           when "twitter"
             "https://api.twitter.com/oauth/authorize?oauth_token=" + consumer_key      #def auth に consumer key をベタ書きしているが、実際はグローバル参照可能なクラスに定数として定義しておく

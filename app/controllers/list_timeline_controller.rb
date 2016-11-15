@@ -19,6 +19,11 @@ class ListTimelineController < ApplicationController
     @tweets_with_image = pick_tweets_with_image
   end
 
+  def mypage
+    @client = twitter_client
+    @lists = @client.lists
+  end
+
   def error_page
   end
 

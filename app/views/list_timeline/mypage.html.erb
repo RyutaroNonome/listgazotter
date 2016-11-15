@@ -1,0 +1,37 @@
+<% au = AuthUser.find_by_id(session[:auth_user_id]) %>
+<% if au %>
+
+<body>
+  <header>
+    <h6>《<%= au.name %>》のマイページ</h6>
+      <ul id="normal" class="dropmenu">
+        <li><a href="#">リスト</a>
+          <ul>
+            <% @lists.each do |list| %>
+              <li><%= link_to list.name, listtimeline_path(id: list.id, name: list.name) %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+  </header>
+
+  <div class="contents">
+   <div id="main">
+     <div id="menu">
+       <%= link_to 'ログアウト', '/auth/twitter/signout' %>
+     </div>
+   </div><!-- main -->
+  </div><!-- contents -->
+
+  <footer>
+  </footer>
+</body>
+
+
+<% else %>
+
+<!-- 部分テンプレート化 -->
+<%= render partial: "test", locals: { client: @client } %>
+
+<% end %>

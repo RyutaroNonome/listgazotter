@@ -8,7 +8,7 @@
       <li><a href="#">リスト</a>
         <ul>
           <% @client.lists.each do |list| %>
-            <li><%= link_to list.name, listtimeline_path(name: list.name) %>
+            <li><%= link_to list.name, listtimeline_path(id: list.id, name: list.name) %>
             </li>
           <% end %>
         </ul>

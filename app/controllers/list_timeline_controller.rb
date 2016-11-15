@@ -3,9 +3,10 @@ class ListTimelineController < ApplicationController
     #@clientを使えるようにする。
     @client = twitter_client
     #クリックされたされたリスト名を文字データにして@tlに入れる。
-    @tl = params[:name]
+    @tl_id = params[:id].to_i
+      @tl_name = params[:name]
     #画像付きツイートだけ格納
-    @tweets = @client.list_timeline(@tl,count: 200)
+    @tweets = @client.list_timeline(@tl_id,count: 200)
      # :include_entities => trueを付けなくても動く。
      # @tweets = @client.list_timeline(@tl,count: 200,:include_entities => true)
 

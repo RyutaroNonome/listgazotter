@@ -3,11 +3,6 @@ class AuthSessionsController < ApplicationController
   # redirect to provider's authorizing page.
   def index
     @client = twitter_client
-    begin
-      @lists = @client.lists
-    rescue Twitter::Error::TooManyRequests
-      redirect_to error_page_path
-    end
   end
 
   def auth

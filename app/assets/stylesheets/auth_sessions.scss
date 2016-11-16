@@ -5,42 +5,14 @@ body {
   margin: 0 auto;
 }
 
+
 h6{
   height: 46px;
   line-height: 46px;
   font-size: 18px;
   text-align: center;
-}
-
-h2{
-  height: 40px;
-  line-height: 40px;
-  font-size: 14px;
-  text-align: center;
-  float: right;
-}
-
-#menu  {
-  text-align:right;
-  font-size:87%;
-  color:#CCCCCC;
-
-}
-
-h3 {
-  font-size: 130%;
-  font-weight:normal;
-  margin:2.5em 0 1em 0;
-  padding:0 0 0 10px;
-  border-left: 3px solid #cccccc;
-}
-
-h4 {
-  font-size: 130%;
-  font-weight:normal;
-  margin:2.5em 0 1em 0;
-  padding:0 0 5px 10px;
-  border-bottom: 1px solid #cccccc;
+  margin: 0;
+  padding: 0;
 }
 
 #main{
@@ -62,7 +34,38 @@ h4 {
   padding: 0.3em 0 0.3em 0.1em;
 }
 
+h3 {
+  font-size: 150%;
+  font-weight:normal;
+/*  margin:2.5em 0 1em 0;
+  padding:0 0 0 10px;*/
+/*  border-left: 3px solid #cccccc;*/
+  margin: 0;
+  padding: 45px 5px 0px;
+}
 
+h4 {
+  font-size: 130%;
+  font-weight:normal;
+  margin:2.5em 0 1em 0;
+  padding:0 0 5px 10px;
+  border-bottom: 1px solid #cccccc;
+}
+
+h2{
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+  float: right;
+}
+
+#menu  {
+  text-align:left;
+  font-size:100%;
+  color:#CCCCCC;
+
+}
 
 /*以下はメニューバー*/
 .dropmenu{

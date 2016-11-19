@@ -21,7 +21,11 @@ class ListTimelineController < ApplicationController
 
   def mypage
     @client = twitter_client
-    @lists = @client.lists
+    begin
+      @lists = @client.lists
+    rescue Twitter::Error::TooManyRequests
+      redirect_to error_page_path
+    end
   end
 
   def error_page

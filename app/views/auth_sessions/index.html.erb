@@ -1,38 +1,52 @@
 <% au = AuthUser.find_by_id(session[:auth_user_id]) %>
 <% if au %>
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twilogintest</title>
+</head>
 <body>
   <header>
     <h6>ついったー</h6>
+    <ul id="normal" class="dropmenu">
+      <li><%= link_to 'マイページ', mypage_path %></li>
+    </ul>
+    <div class="button">
+      <a href="/auth/twitter/signout" class="btn">　ログアウト　</a>
+    </div>
   </header>
-
   <div class="contents">
     <div id="main">
-      <div id="menu">
-        <%= link_to 'マイページ', mypage_path %>
-        <%= link_to 'ログアウト', '/auth/twitter/signout' %>
-      </div>
       <h3>絵師さんのイラスト更新確認をかんたんに</h3>
         <p>　あなたの"リスト"タイムラインの画像付きツイートのみを抽出して表示するので、お気に入り絵師さんのイラスト・漫画の更新をかんたんに確認できます。</p>
       <h3>利用方法</h3>
-      　twitterと一緒に使います。
-      <ul>
+        　twitterと一緒に使います。
+      <ul style="list-style:none;">
         <li>①ジャンルごとにリストを作成する。</li>
-        　　(例: ラブライブ!,デレマス,など。)
+          　　(例: ラブライブ!,デレマス,など。)
         <li>②各リストにお気に入り絵師さんを登録する。</li>
         <li>③ついったーで各リストのイラスト更新をチェック♪</li>
       </ul>
       <h4>ご利用規約</h4>
-      <ul>
-        <li>利用は無料ですが、<a href="http://www.netmania.jp/abouts.php">に関してはこちら</a>をご覧下さい。</li>
-      </ul>
-    </div><!-- main -->
-  </div>
-
-  <footer>
-  </footer>
+        <ul>
+          <li>利用は無料ですので、どなたでもお気軽にいつでもお楽しみいただけます。</li>
+          <li>Twitter認証は、"ツイートなどの情報を読み込む為のみ"に使用されます。ツイートしたりフォローしたり等の乗っ取り行為は一切されませんので、安心してご利用ください。</li>
+        </ul>
+      <h4>おまけ</h4>
+        <ul style="list-style:none;">
+          <li>当サービスは、ベータ版(プロトタイプ)につき、ご意見やご感想を募集中です。<br><br>
+          　∧,,,,∧ <br>
+          .(*`･ω･)　<　<a href="">こちらのフォーム</a>から<br>
+          ./つ(⌒⌒)　　もしくは<br>
+          しー ＼／　　　作成者<a href="https://twitter.com/MosamosaPoodle?lang=ja">@MosamosaPoogle</a>にDMでも！<br>
+          </li>
+          <li>今後バージョンアップする際や不具合修正などの参考にさせていただきます。よろしくお願いいたします！</li>
+        </ul>
+      </div><!-- main -->
+    </div><!-- contents -->
 </body>
-
+</html>
 
 <% else %>
 <%= render partial: "list_timeline/login_page" %>

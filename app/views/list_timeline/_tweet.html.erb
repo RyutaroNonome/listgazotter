@@ -1,7 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twilogintest</title>
+</head>
 <header>
   <h1>《<%= @tl_name %>》のタイムライン</h1>
     <ul id="normal" class="dropmenu">
-      <li><a href="#">リスト</a>
+      <li><a>リスト</a>
         <ul>
           <% @lists.each do |list| %>
             <li><%= link_to list.name, listtimeline_path(id: list.id, name: list.name) %>
@@ -10,6 +15,9 @@
         </ul>
       </li>
     </ul>
+    <div class="button">
+      <a href="/auth/twitter/signout" class="btn">　ログアウト　</a>
+    </div>
 </header>
 
 <div class="contents_tweet">
@@ -32,3 +40,4 @@
     </div>
   <% end %>
 </div>
+</html>

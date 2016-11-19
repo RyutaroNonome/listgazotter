@@ -12,7 +12,6 @@ body {
   background-color: white;
 }
 
-
 h6{
   height: 46px;
   line-height: 46px;
@@ -74,6 +73,31 @@ h2{
   color:#CCCCCC;
 
 }
+
+
+.button{
+  float: right;
+}
+a.btn {
+/*    background-color:#ddeeff;
+    border:1px solid #ccc;
+    padding:5px;
+    cursor:pointer;
+    text-decoration: none;*/
+  display: block;
+  margin: 0.5px;
+  padding: 15px 0 11px;
+  background: #8a9b0f;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+}
+a.btn:hover {
+    color:white;
+    background: #616d0b;
+}
+
 
 /*以下はメニューバー*/
 .dropmenu{

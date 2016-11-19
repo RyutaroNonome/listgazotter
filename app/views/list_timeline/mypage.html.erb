@@ -1,11 +1,17 @@
 <% au = AuthUser.find_by_id(session[:auth_user_id]) %>
 <% if au %>
 
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twilogintest</title>
+</head>
 <body>
   <header>
     <h6>《<%= au.name %>》のマイページ</h6>
       <ul id="normal" class="dropmenu">
-        <li><a href="#">リスト</a>
+        <li><a>リスト</a>
           <ul>
             <% @lists.each do |list| %>
               <li><%= link_to list.name, listtimeline_path(id: list.id, name: list.name) %>
@@ -14,20 +20,49 @@
           </ul>
         </li>
       </ul>
+    <div class="button">
+      <a href="/auth/twitter/signout" class="btn">　ログアウト　</a>
+    </div>
   </header>
 
   <div class="contents">
-   <div id="main">
-     <div id="menu">
-       <%= link_to 'ログアウト', '/auth/twitter/signout' %>
-     </div>
-   </div><!-- main -->
-  </div><!-- contents -->
-
-  <footer>
-  </footer>
+    <div id="main">
+      <h3>ログイン中</h3>
+        　@<%= au.nickname %>
+      <ul style="list-style:none;">
+        <li><img src="<%= au.img_url %>" /></li>
+        <li><%= au.user_info["location"] %></li>
+        <li><%= au.user_info["description"] %></li>
+      </ul>
+      <div id="menu">
+      </div><!-- menu -->
+      <h3>利用方法</h3>
+        　twitterと一緒に使います。
+      <ul style="list-style:none;">
+        <li>①ジャンルごとにリストを作成する。</li>
+          　　(例: ラブライブ!,デレマス,など。)
+        <li>②各リストにお気に入り絵師さんを登録する。</li>
+        <li>③ついったーで各リストのイラスト更新をチェック♪</li>
+      </ul>
+      <h4>ご利用規約</h4>
+        <ul>
+          <li>利用は無料ですので、どなたでもお気軽にいつでもお楽しみいただけます。</li>
+          <li>Twitter認証は、"ツイートなどの情報を読み込む為のみ"に使用されます。ツイートしたりフォローしたり等の乗っ取り行為は一切されませんので、安心してご利用ください。</li>
+        </ul>
+      <h4>おまけ</h4>
+        <ul style="list-style:none;">
+          <li>当サービスは、ベータ版(プロトタイプ)につき、ご意見やご感想を募集中です。<br><br>
+          　∧,,,,∧ <br>
+          .(*`･ω･)　<　<a href="">こちらのフォーム</a>から<br>
+          ./つ(⌒⌒)　　もしくは<br>
+          しー ＼／　　　作成者<a href="https://twitter.com/MosamosaPoodle?lang=ja">@MosamosaPoogle</a>にDMでも！<br>
+          </li>
+          <li>今後バージョンアップする際や不具合修正などの参考にさせていただきます。よろしくお願いいたしますm(_ _)m</li>
+        </ul>
+      </div><!-- main -->
+    </div><!-- contents -->
 </body>
-
+</html>
 
 
 <% else %>

@@ -9,10 +9,6 @@ h1, h2, h3, h4, h5, h6, p, body {
   padding: 0;*/
 }
 
-.twitter_login_button{
-  margin: 0 0 0 1px;
-}
-
 .clearfix:after{
   display: block;
   content: "";
@@ -22,6 +18,10 @@ h1, h2, h3, h4, h5, h6, p, body {
 .wrapper{
   min-width: 960px;
   }
+
+li.tweet{
+  margin: 10px 0 0 206px;
+}
 
 header{
   height: 46px;
@@ -94,4 +94,8 @@ h2{
   font-size: 14px;
   line-height: 20px;
   margin: 0px 0px 0px 1px;
+}
+
+.tweet_button{
+  margin: 0 0 0 right;
 }

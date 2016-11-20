@@ -36,19 +36,23 @@ h6{
 }
 
 #main li {
-  margin: 0.5em 0 0.5em 1.5em;
+  /*margin: 0.5em 0 0.5em 1.5em;*/
   letter-spacing: 0.02em;
   padding: 0.3em 0 0.3em 0.1em;
 }
 
 h3 {
-  font-size: 150%;
+  /*font-size: 150%;*/
+  font-size: 167%;
   font-weight:normal;
 /*  margin:2.5em 0 1em 0;
   padding:0 0 0 10px;*/
 /*  border-left: 3px solid #cccccc;*/
-  margin: 0;
-  padding: 45px 5px 0px;
+  /*margin: 0;*/
+  margin: 0 0 20px;
+  /*padding: 45px 5px 0px;*/
+  padding: 45px 0px 2px;
+  letter-spacing: -1px;
 }
 
 h4 {
@@ -71,6 +75,7 @@ h2{
   text-align:left;
   font-size:100%;
   color:#CCCCCC;
+  margin: 12px 0 0 0;
 
 }
 

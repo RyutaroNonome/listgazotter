@@ -2,6 +2,15 @@
 <% if au %>
 
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>りすとがぞったー</title>
+</head>
+<body>
+  <header>
+
+<!-- navbar -->
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -13,12 +22,13 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="">りすとがぞったー</a>
+      <p class="navbar-text"><%= @tl_name %>_timeline</p>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li class="active"></li>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -30,8 +40,7 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left">
-      </form>
+      <p class="navbar-text">Signed in as <%= au.nickname %></p>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">リスト <span class="caret"></span></a>
@@ -51,29 +60,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<!--  -->
 
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>りすとがぞったー</title>
-</head>
-<body>
-  <header>
-    <h6>《<%= au.name %>》のマイページ</h6>
-      <ul id="normal" class="dropmenu">
-        <li><a>リスト</a>
-          <ul>
-            <% @lists.each do |list| %>
-              <li><%= link_to list.name, listtimeline_path(id: list.id, name: list.name) %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
-    <div class="button">
-      <a href="/auth/twitter/signout" class="btn">　ログアウト　</a>
-    </div>
   </header>
 
   <div class="contents">

@@ -69,7 +69,8 @@
           <%= tl.user.name %> @<%= tl.user.screen_name %><br>
         </p>
         <p class="text">
-          <%= tl.text %>
+          <%= tl.created_at %>
+          <br><%= tl.text %>
         </p>
           <p class="media">
             <% tl.media.each do |media| %>

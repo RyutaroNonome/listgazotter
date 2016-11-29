@@ -62,14 +62,39 @@
 <body>
 <div class="contents_tweet">
   <% @tweets_with_image.each do |tl| %>
-    <div class="message clearfix">
+
+
+
+
+<div class="umekomi">
+<blockquote class="twitter-tweet" data-lang="ja">
+
+<!-- <p lang="ja" dir="ltr">八坂神奈子 <a href="https://t.co/bNpyJWgHFC">pic.twitter.com/bNpyJWgHFC</a></p> -->
+
+
+&mdash; <%= tl.user.name %> (@<%= tl.user.screen_name %>) <a href="https://twitter.com/<%= tl.user.screen_name %>/status/<%= tl.id %>">2016年11月26日</a></blockquote>
+
+
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+
+
+
+<!--     <div class="message clearfix">
       <%= image_tag(tl.user.profile_image_url) %>
       <div class="message_box">
         <p class="user_name">
           <%= tl.user.name %> @<%= tl.user.screen_name %><br>
         </p>
         <p class="text">
-          <%= tl.created_at %>
+          <%= tl.id %>
+          <br><%= tl.created_at %>
           <br><%= tl.text %>
         </p>
           <p class="media">
@@ -78,7 +103,7 @@
             <% end %>
           </p>
       </div>
-    </div>
+    </div> -->
   <% end %>
 </div>
 </body>

@@ -34,13 +34,25 @@ class ListTimelineController < ApplicationController
   private
 
   def pick_tweets_with_image
-    if (@tweets.is_a?(Array))
-      @tweets.select do |tweet|
-        # http~含み且つRT含まない。
-        !!(tweet.text =~ /https?:\/\/t\.co\/\w{10}/) && !(tweet.text =~ /RT/)
-      end
-    else
-      []
-    end
-  end
+    # @tweet_array = []
+    max_id = @client.list_timeline(@tl_id).first.id
+    selected_tweets = []
+    17.times do
+    # 4.times.map do
+      tweets = @client.list_timeline(@tl_id, max_id: max_id, count: 200)
+      if (tweets.is_a?(Array))
+        temp_tweets = tweets.select do |tweet|
+          # http~含み且つRT含まない。
+          !!(tweet.text =~ /https?:\/\/t\.co\/\w{10}/) && !(tweet.text =~ /RT/)
+          # @tweet_array << tweet
+        end
+        selected_tweets.concat(temp_tweets)
+      # else
+        # []
+      end #if
+      max_id = selected_tweets.last.id - 1
+      # sleep 60
+    end #times
+    selected_tweets
+  end #def
 end

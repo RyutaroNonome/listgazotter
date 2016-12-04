@@ -43,7 +43,7 @@ class ListTimelineController < ApplicationController
       if (tweets.is_a?(Array))
         temp_tweets = tweets.select do |tweet|
           # http~含み且つRT含まない。
-          !!(tweet.text =~ /https?:\/\/t\.co\/\w{10}/) && !(tweet.text =~ /RT/)
+          !!(tweet.text =~ /https?:\/\/t\.co\/\w{10}/) && !(tweet.text =~ /RT/) && !(tweet.text =~ /shindanmaker.com/) && !(tweet.text =~ /RT/)
           # @tweet_array << tweet
         end
         selected_tweets.concat(temp_tweets)

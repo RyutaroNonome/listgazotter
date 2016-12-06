@@ -37,13 +37,13 @@ class ListTimelineController < ApplicationController
     # @tweet_array = []
     max_id = @client.list_timeline(@tl_id).first.id
     selected_tweets = []
-    17.times do
+    6.times do
     # 4.times.map do
       tweets = @client.list_timeline(@tl_id, max_id: max_id, count: 200)
       if (tweets.is_a?(Array))
         temp_tweets = tweets.select do |tweet|
           # http~含み且つRT含まない。
-          !!(tweet.text =~ /https?:\/\/t\.co\/\w{10}/) && !(tweet.text =~ /RT/) && !(tweet.text =~ /shindanmaker.com/) && !(tweet.text =~ /RT/)
+          !!(tweet.text =~ /https?:\/\/t\.co\/\w{10}/) && !(tweet.text =~ /RT/) && !(tweet.text =~ /shindanmaker/)
           # @tweet_array << tweet
         end
         selected_tweets.concat(temp_tweets)
